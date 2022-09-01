@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        /*
+        Q. n개의 정수를 전달하면 해당 정수들의 총합과 평균을 반환하는 함수 calcTotAvg를 정의하세요.
+        */
+
+        /*function calc_total_avg (...num) {
+            var total_result = 0;
+            for (var n of num) {
+                total_result += n;
+            }
+            return {
+                total : total_result,
+                avg : total_result/num.length
+            };
+        }
+
+        var results = calc_total_avg(10,30,50,60,100);
+        console.log(results); */
+
+        //다른 방법
+        var calcTotAvg = (...nums) => {
+            var total = 0;
+            for (var n of nums) {
+                total += n;
+            }
+            var avg = total / nums.length;
+            return {total, avg};    //ES6문법. total 이름으로 total값, avg 이름으로 avg값 넣어서 객체 된다.
+        }
+
+        var result = calcTotAvg(99,454,24,7291);
+        console.log(`총합 : ${result.total}, 평균 : ${result.avg}`);
+
+    </script>
+    
+</body>
+</html>

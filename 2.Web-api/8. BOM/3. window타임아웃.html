@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+        <h3> 5초 뒤 타임함수가 실행되는데, 이 버튼을 누르면 실행되지 않습니다. </h3>
+        <button class="stopTime">취소~~~~~~~~~</button>
+
+    <script>
+        
+        //timeout : 예약기능
+        //setTimeout(실행하려는함수, 몇밀리초 뒤 실행할지);
+
+        const stop = setTimeout(function() {
+            alert('5초 지났다.');
+        }, 5000);
+
+
+        //실행되지않게하기  -   clearTimeout(취소할함수); 
+        const $stopTime = document.querySelector('.stopTime');
+        $stopTime.onclick = function() {
+            clearTimeout(stop);
+        };
+
+
+
+        
+    </script>
+    
+</body>
+</html>

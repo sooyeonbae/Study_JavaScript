@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <ul id="fruits">
+
+    </ul>
+    
+
+    <script>
+
+        //Live DOM : 사전에 미리 렌더링되어있는 (=실제로 존재하는) 요소 노드
+        const $fruits = document.getElementById('fruits');
+
+
+        //과일 이름 텍스트 배열
+        const fruitName = ['Apple', 'Banana', 'Grape', 'Orange'];
+
+
+
+
+
+        //반복문 이용해서 ul에 추가하기
+        // for(let f of fruitName) {
+        //     const $li = document.createElement('li');   //li생성
+        //     $li.textContent = f;    //li에 문자열삽입
+        //     $fruits.appendChild($li);   //fruits에 li 추가
+        // }
+        /*
+        # 이 방법의 문제점 :
+        - 이미 활성화된 Live DOM에다가 반복해서 가상 DOM을 추가하는 행위는
+        메모리상 높은 코스트가 발생한다.
+        - 활성화된 DOM을 조작하는 것(appendChild)은 가능한 한 횟수를 줄여줘야 합니다.
+        */
+
+
+        //가상의 부모DOM 생성 - DocumentFrament
+        //다른 노드를 담는 임시 컨테이너 역할을 하는 가상 DOM 객체
+        const $frag = document.createDocumentFragment();
+        // 여기에 모아두고 appendChild를 한번 써서 한방에 넣을거다.
+        for (let f of fruitName) {
+            const $li = document.createElement('li');
+            $li.textContent = f;
+            $frag.appendChild($li);
+        }
+        $fruits.appendChild($frag);
+        
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        //즉시 실행 함수 (정의와 동시에 실행되는 함수)
+        (function(x,y) {
+            console.log(`x + y = ${x+y}`);
+        }(60,50));
+
+
+        // - - - - - - - - - - - - - - -
+        //재귀함수 (recursive function) : 함수 안에서 자기자신(함수)를 다시 호출
+        function countdown(n) {
+            if (n<0) return;    //재귀함수는 종료조건이 반드시 추가되어야 합니다.
+            console.log(n);
+            countdown(n-1);
+        }
+        countdown(5);
+        
+       
+        function factorial(n) {
+            if (n<=1) return 1;
+            return n*factorial(n-1);
+        }
+        console.log(factorial(6));
+
+
+        // - - - - - - - - - - - - - - -
+        //중첩 함수 : 함수 안에 함수
+        function outer () {
+            var x = 1;
+
+            function inner () {
+                var y = 2;
+                console.log(x+y);
+            }
+            inner();
+        }
+        outer();
+        inner();    //부를 수 없다. outer가 실행되지않으면 inner가 선언도 되지 않는다.
+
+
+    </script>
+    
+</body>
+</html>

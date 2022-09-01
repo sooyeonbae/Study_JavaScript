@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box {
+            width : 100px;
+            height: 100px;
+            background-color: lightblue;
+            margin: 0 auto;
+            text-align: center;
+            line-height: 100px;
+        }
+
+        .red {
+            color: red;
+        }
+
+        .blue {
+            color: blue;
+        }
+
+        .circle {
+            border-radius: 50px;
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <div class="box red">HELLO</div>
+
+    <script>
+
+        const $box = document.querySelector('.box');
+
+        //기존 방법
+        console.log($box.attributes.class.value);
+        console.log($box.getAttribute('class'));
+
+        //새 방법
+        console.log($box.className);
+
+
+        //class의 red를 blue로 바꿔주기
+        //$box.setAttribute('class', 'blue');  //box red가 blue로 바뀌어서 box 속성들이 사라진다.
+        
+        //$box.setAttribute('class', 'box blue');
+        //다른방법
+        //$box.className = 'box blue';
+        
+
+        // - - - - - - - - - - - - - - - - - -
+        //쉬운 방법 (box는 안건드려도 되는 클래스 조작) - classList
+        console.log($box.classList);    
+
+        //요소에 클래스를 추가하기  - classList.add()
+        //기존방법
+        //$box.className = 'box red circle';
+        //classList방법
+        $box.classList.add('circle');
+        $box.classList.add('abc', 'def', 'ghi');    //한번에 클래스 여러개도 추가 가능
+        
+        //요소에 특정 클래스를 교체하기 - classList.replace( , )
+        $box.classList.replace('red', 'blue');
+
+        //요소에 특정 클래스를 삭제하기 - classList.remove()
+        $box.classList.remove('circle');
+        $box.classList.remove('abc', 'def', 'ghi'); //한번에 클래스 여러개도 삭제 가능
+
+        //요소에 특정 클래스가 존재하는지 확인 - classList.contains()
+        console.log($box.classList.contains('red'));
+
+        //toggle() : 해당클래스가 존재하면 삭제, 존재하지 않으면 추가
+        $box.classList.toggle('circle');
+        $box.classList.toggle('blue');
+
+
+
+    </script>
+
+
+
+</body>
+</html>

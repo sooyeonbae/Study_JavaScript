@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        .root {
+            width: 500px;
+            height: 500px;
+            background-color: tomato;
+        }
+
+        .parent {
+            width: 50%;
+            height: 50%;
+            background-color: lightcoral;
+        }
+
+        .child {
+            width: 50%;
+            height: 50%;
+            background-color: lemonchiffon;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <a href="https://www.naver.com">네이버로 이동</a>
+
+    <br>
+
+    <div class="root">
+        <div class="parent">
+            <div class="child"></div>
+        </div>
+    </div>
+
+
+    <script>
+
+        document.querySelector('.root').addEventListener('click', e => {
+            alert('R O O T');
+
+            //부모쪽에서 자식쪽으로 이벤트를 전달하고싶으면 addEventListener의 두번째 매개값으로 true 주기.
+            // -> 자식쪽에 이벤트 발생할때 부모이벤트 먼저, 자식이벤트 나중에 발생한다. '캡쳐링'
+        }, true);
+
+        document.querySelector('.parent').addEventListener('click', e => {
+            alert('P A R E N T');
+            //e.stopImmediatePropagation
+        }, true);
+
+        document.querySelector('.child').addEventListener('click', e => {
+            alert('C H I L D');
+            //e.stopImmediatePropagation();   //버블링막기
+        });
+
+        //- - - - - - - - - - - - - - - -
+        //a태그에 이벤트걸어주기
+        const $link = document.querySelector('a');
+        $link.addEventListener('click', e => {
+
+           
+            if (!confirm('정말 이동하시겠어요?')) {
+                //return;  //이러면 안됨) event만 끝날 뿐 a링크의기능은 발동돼서 '취소' 눌러도 링크로 이동한다.
+                e.preventDefault();     //태그의 고유 기능을 막음.
+            }
+
+        });
+
+
+    </script>
+
+</body>
+</html>

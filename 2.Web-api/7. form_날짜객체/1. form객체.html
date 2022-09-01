@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="#" name="regForm">
+        아이디: <input type="text" name="id"> <br>
+        비밀번호: <input type="password" name="pw"> <br>
+        번호:
+        <div>
+            <select name="phone">
+                <option>010</option>
+                <option>011</option>
+                <option>018</option>
+            </select>
+            - <input type="text" name="phone2">
+            - <input type="text" name="phone3">
+        </div>
+
+        자기소개: <br>
+        <textarea name="intro" cols="50" rows="5"></textarea>
+        <br>
+
+        분야:   <!--getParameterValues로 받는다. String[] 로 전달-->
+        <input type="checkbox" name="inter">Java
+        <input type="checkbox" name="inter">DB
+        <input type="checkbox" name="inter">Jsp
+        <input type="checkbox" name="inter">JavaScript
+
+        <button type="button" id="regist" onclick="check()">가입</button>
+        <!--JS로 검증을 하고 JS함수로 submit 하기로 한것.-->
+
+    </form>
+
+    
+    <script>
+
+        /*
+        - 폼 객체는 document 객체의 하위 객체 중 하나로
+        유일하게 name 속성으로만 form 요소의 선택이 가능합니다.
+        - form에도 name이 있어야 하며, name으로 모두 접근할 수 있습니다.
+        - document.폼이름.인풋이름  으로 접근합니다.
+        */
+
+        /*
+        value - 값을 반환
+        checked - 체크되어있다면 true, 그렇지 않으면 flase
+        disable - 비활성화라면 true, 그렇지 않으면 false
+        length - 요소의 길이 반환
+        focus() - 요소에 포커싱 (커서 찍기)
+        submit() - form을 제출 (action 경로로 전송)
+        */
+
+        function check() {
+            console.log('check 함수 발동!');
+            const $form = document.regForm; //document.폼이름
+            //JS로 검증
+            if ($form.id.value === 0) {
+                alert ('아이디는 필수입니다.')
+                return;
+            } else if ($form.id.value.length < 4) {
+                alert ('아이디는 4글자 이상이어야 합니다.');
+                return;
+            } else if ($form.pw.value === '') {
+                alert ('비밀번호는 필수입니다.');
+                return;
+            } else if ($form.pw.value.length < 8) {
+                alert ('비밀번호는 8글자 이상으로 입력하세요.');
+                return;
+            } else {
+                //체크박스에 하나라도 체크되어있는지 확인
+                const $inter = document.getElementsByName('inter'); //리턴타입:nodeList(유사배열)
+                let flag = false;
+                for (let $ele of $inter) {
+                    if ($ele.checked) {
+                        flag = true;
+                        break;
+                    }
+                }
+                if (!flag) {
+                    alert ('분야를 한 개 이상 체크하세요.');
+                    return;
+                }
+            }
+            
+            if (confirm('회원가입 하시겠습니까?')) {    //확인 : true, 취소 : false
+                $form.submit();
+            } else {
+                return;
+            }
+
+        }
+
+    </script>
+
+
+</body>
+</html>

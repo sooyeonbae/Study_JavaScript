@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text">
+    <p class="msg"></p>
+
+    <script>
+
+        const $input = document.querySelector('input');
+        const $msg = document.querySelector('.msg');
+
+        $input.addEventListener('keyup', e=>{   //keyup : 키보드를 눌렀다가 '뗐을 때'       cf. keydown : 키보드누를때
+            //console.log(e.key); //e.target 하면 input 나옴
+            if(e.key==='Enter') {
+                $msg.textContent = e.target.value;
+                e.target.value='';  //input창 비워주기
+            } else if (e.key ==='Escape'){  //ESC키
+                $msg.textContent = '';
+            }
+        });
+
+    </script>
+    
+</body>
+</html>

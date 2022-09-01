@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        //void함수 : 리턴값이 없는 함수.
+        //void 함수는 단독 호출해서 사용합니다(변수에받아서쓰는거X). 다른 함수의 인자(매개값)으로 전달이 불가능합니다.
+        function greetings(nickname) {
+            var bad_nick = ['멍충이', '바보', '양아치'];
+            if (bad_nick.includes(nickname)) {
+                console.log('그런 나쁜말은 하지마세요!');
+                return;         //함수 강제로 종료.
+                console.log('메롱이다'); //이미 함수가 종료돼서 실행되지 않는다.
+            }
+            console.log(nickname+'님 안녕하세용');
+
+        }
+        greetings('멍충이');
+        greetings('꺠꾸쇠');
+
+        var result = greetings('멍충이');
+        console.log(result);        //undefined
+
+        // - - - - - - - - - - - - - - - - -
+        function operate_all (n1, n2) {
+            return n1 + n2; //여기서 함수가 끝나서 밑에 return들 절대 실행안된다. 함수는 한 번 호출에 한 번 리턴!
+            return n1 - n2;
+            return n1 * n2;
+            return n1 / n2;
+        }
+
+        var results = operate_all(10,2);
+        console.log(results);   // 12 (맨 처음 return 된 값만 적용된다.)
+
+        function operate_all(n1, n2) {
+            return {        //값을 여러개받으려면 객체로 받거나 배열로받거나 하면 된다.
+                plus : n1+n2,
+                minus : n1-n2,
+                multi : n1*n2,
+                divide : n1/n2
+            };
+        }
+
+        var results = operate_all(10,2);
+        console.log(results);
+        console.log(results.multi);     //multi만 받기
+        console.log(results['minus']);
+
+    </script>
+    
+</body>
+</html>

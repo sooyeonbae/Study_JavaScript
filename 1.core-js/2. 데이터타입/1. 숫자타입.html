@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        /*
+        JS의 데이터타입 6가지
+        number, string, boolean, undefined(값을 할당하지 않은 변수에 암묵적으로 할당되는 값), null(값이 의도적으로 없을때), symbol(ES6에서 추가된 타입.2015년)
+        */
+
+        var integer = 100;  //정수
+        var float = 3.14;   //실수
+        
+        //타입 확인 - typeof
+        console.log(typeof integer);
+        console.log(typeof float);
+        //둘 다 number 타입이다.
+
+        var bin = 0b01000010;   //0b : 2진수
+        console.log(bin);       //10진수로
+
+        var oct2 = 0o102;       //0o : 8진수
+        console.log(oct2);
+
+        var hex = 0xAC00;       //0x : 16진수
+        console.log(hex);
+
+        console.log(10/4);      //자바에서는2지만(int) JS에서는 2.5
+        console.log(30/'메롱');     //-error. 콘솔에서 NaN(Not a Number)라고 뜬다.
+                                // 잘못된 연산, 표현할 수 없는 결과일 때 출력되는 키워드.
+
+    </script>
+    
+</body>
+</html>

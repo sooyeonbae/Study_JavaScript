@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        ul > li {
+            font-size: 30px;
+        }
+        .red{
+            color:red;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <ul id="fruits">
+        <li class="red">Apple</li>
+        <li class="red">Strawberry</li>
+        <li class="red">Tomato</li>
+        <li class="red">Hongsi</li>
+    </ul>
+
+    <script>
+        
+        //유사배열 NodeList로 리턴받기
+        //const $elements = document.querySelectorAll('.red');
+
+        //유사배열 HTMLCollection 리턴받기
+        const $elements = document.getElementsByClassName('red');
+
+        //배열 아니라 .pop()같은것들못함.
+        //let $ele = $elements.pop();     //-error
+
+        //유사배열객체를 배열처럼 제어할 때는 순수배열로 변경해서 쓰세요.
+        
+        //방법 1.
+        //const realArray = Array.from($elements);
+
+        //방법 2. (ES6)
+        const realArray = [...$elements];
+        let $ele = realArray.pop();
+        console.log(realArray);
+
+        for (let i=0; i<realArray.length; i++) {
+            realArray[i].className = 'blue';
+        }
+
+
+    </script>
+
+</body>
+</html>

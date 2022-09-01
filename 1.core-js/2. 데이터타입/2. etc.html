@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        //논리타입 (boolean) - 소문자로 써야한다!
+        var logical = false;
+        logical = true;
+
+        var apple = 0;
+        if(apple) { //자바, C언어에서는 에러지만 JS에서는 0이면 false로 해석된다. 나머지정수는 true.
+            console.log('사과가 ' +apple+ '개 있습니다.');
+        } else {
+            console.log('사과가 하나도 없습니다.');
+        }
+
+        
+        //null
+        var banana = '바나나';
+        banana = null;
+        console.log(typeof banana);     // - object라고 뜬다.
+        console.log(banana);            // null : 내가 직접 지운 값
+        
+        var i;
+        console.log(typeof i);          //- undefined : 선언되지 않은 값
+
+
+
+    </script>
+
+    
+</body>
+</html>

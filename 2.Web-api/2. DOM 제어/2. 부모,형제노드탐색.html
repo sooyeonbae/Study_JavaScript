@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="wrap">
+        <ul id="fruits">
+            <li class="apple">Apple</li>
+            <li class="banana">Banana</li>
+            <li class="grape">Grape</li>
+        </ul>
+    </div>
+
+
+    <table id="board">
+        <tr>
+            <td>A</td>
+            <td>B</td>
+        </tr>
+        <tr>
+            <td>C</td>
+            <td>D</td>
+        </tr>
+    </table>
+
+    
+    <script>
+
+        const $banana = document.querySelector('.banana');
+
+        //부모 노드 탐색  - parentNode
+        const $parent = $banana.parentNode;
+        console.log($parent);
+
+        //부모의 부모
+        const $div = $banana.parentNode.parentNode;
+        console.log($div);
+
+
+        //이전형제노드 탐색 - previousElementSibling
+        const $prev = $banana.previousElementSibling;
+        console.log($prev);
+
+        //다음형제노드 탐색 - nextElemenetSibling
+        const $next = $banana.nextElementSibling;
+        console.log($next);
+
+        //더이상 지목할 형제가 없을 시 (이전에 없거나 이후에 없거나) null이 옵니다.
+        const $prev2 = $next.nextElementSibling;
+        console.log($prev2);
+
+        
+        //- - - - - - - - - - - - - - - - - - - - - - -
+        //table태그는 자식태그로 tbody가 자동으로 삽입된다.
+        //tr, td 접근을 위해서는 tbody를 통과해야한다.
+        const $board = document.getElementById('board');
+        console.log($board.children);   //HTMLCollection[tbody]
+        const $tbody = $board.children;
+        console.log($tbody[0].children);    //이렇게 접근해야한다.
+
+
+    </script>
+
+
+
+    
+</body>
+</html>

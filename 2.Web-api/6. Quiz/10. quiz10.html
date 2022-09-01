@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h3>다중 이벤트 처리</h3>
+    <div>
+        <ul>
+            <li><img src="./img/1.jpg" alt="1" width="100px"></li>
+            <li><img src="./img/2.jpg" alt="2" width="100px"></li>
+            <li><img src="./img/3.jpg" alt="3" width="100px"></li>
+            <li><img src="./img/4.jpg" alt="4" width="100px"></li>
+        </ul>
+    </div>
+    결과 : 
+    <div class="result">
+        <img src="./img/1.jpg" alt="결과" width="300px">
+    </div>
+
+
+
+    <script>
+
+        const $ul = document.querySelector('ul');
+        const $img = document.querySelector('.result img');
+
+        $ul.addEventListener ('click', function(e) {
+            if (!e.target.matches('ul>li>img')) {
+                return;
+            }
+            $img.setAttribute('src', e.target.src); 
+        })
+
+
+    </script>
+    
+
+</body>
+</html>

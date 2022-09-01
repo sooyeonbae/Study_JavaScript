@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        //우리반 학생들 4과목 점수(국영수탐)
+        // var kim = [87, 56, 77, 88];
+        // var lee = [99, 34, 67, 21];
+        // var bae = [100, 99, 100, 99];
+
+        var student_scores = [
+            [87, 56, 77, 88],
+            [99, 34, 67, 21],
+            [100, 99, 100, 99],
+            [15, 75, 34, 22]
+        ];
+
+        console.log(student_scores);
+
+        console.log(student_scores[2]);
+
+        console.log(student_scores[2][0]);  //인덱스2번 학생의 인덱스0번 점수
+
+
+
+        //반 평균 구하기
+        //한 학생의 평균의 총 합을 저장할 변수
+        var averages = 0;
+        for (var one_student of student_scores) {    // 배열 덩어리 (사람) 들어온다.
+            var each_total = 0; //한 학생의 네과목 총점
+            for (var score of one_student) {
+                each_total += score;
+            }
+            //한 학생의 평균점수 구하기
+            var each_average = each_total/one_student.length;
+            averages += each_average;
+        }
+        //반평균
+        var class_avg = averages / student_scores.length;
+        console.log('우리반 평균은 '+class_avg+'점');
+
+    </script>
+    
+</body>
+</html>

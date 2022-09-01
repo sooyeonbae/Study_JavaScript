@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        
+        //함수 정의
+        //함수 이름은 동사적 기능이 내포되게 짓습니다. (변수는 명사)
+        function calcTotal(x) {  //매개값을 받아서 1부터 그 값 까지의 총 합을 리턴해주는 함수
+            console.log('함수가 호출됐다.');
+            var total = 0;
+            for (var n=1; n<=x; n++) {
+                total += n;
+            }
+            return total;
+        }
+
+        console.log(calcTotal(10));
+
+        var result = calcTotal(15);
+        console.log(result);
+
+
+        function add(n1, n2) {
+            return n1+n2;
+        }
+        console.log(add(10,20));
+
+        
+
+        //함수 리터럴 선언방식
+        var add2 = function(n1, n2) {
+            return n1 + n2;
+        }
+
+        console.log(add2(15,55));
+
+
+        //화살표 함수 (ES6부터)
+        var add3 = (n1, n2) => {
+            return n1+n2;
+        }
+        //간략한버전(함수안에 포함돼있는 문장이 한 줄일때 중괄호, 리턴 생략가능)
+        var add3 = (n1, n2) => n1+n2;
+
+        console.log(add3(12,23));
+
+
+        //함수를 변수에 할당할 수 있습니다.
+        var ct = calcTotal; //ct로 부를수있게됨
+        var result2 = ct(20);
+        console.log(result2);
+
+    </script>
+
+</body>
+</html>

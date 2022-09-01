@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <ul>
+        <li id="apple">APPLE</li>
+        <li id="banana">BANANA</li>
+        <li id="grape">GRAPE</li>
+        <li id="watermelon">WATERMELON</li>
+    </ul>
+
+    <script>
+
+        //아이디를 통해서 요소 얻기
+        //관례적으로 노드변수는 이름 앞에 $ 기호를 붙입니다.
+        const $apple = document.getElementById('apple');    //documen.getElementById('요소의 아이디')
+        console.log($apple);
+
+
+        //요소에 접근하기
+        console.log($apple.attributes);     //NamedNodeMap 으로 요소들 나온다.
+        console.log($apple.attributes[0]);  //0번속성 : id="apple"
+
+        $apple.style.fontSize = '40px'; 
+        document.body.style.backgroundColor = 'cornflowerblue';
+
+
+        //없는 아이디를 지목하면 null 뜬다.
+        //const $item = document.getElementById('tomato');        //null
+        //console.log($item);
+        
+        //$item.style.color = 'tomato';   // - error
+
+        //if($itm !== null) {
+        //    $item.style.color = 'yellow';   //이런식으로 널체크 해주면 된다.
+        //}
+
+        
+        //요소에 id 부여시 아이디값으로 자동 전역변수가 생성된다.
+        grape.style.color = 'violet';
+
+
+    </script>
+</body>
+</html>

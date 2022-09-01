@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        var apple = '사과';
+        var apple = '애플';     //같은 이름으로 변수 재선언 - 자바에서는 에러지만 JS에서는 가능(뒤에걸로).웬만하면 하지마라..
+        console.log(apple);
+
+        var banana = '바나나';
+        var BANANA = '빠나나';    //대소문자 구분해서 다르게 인식한다.
+        console.log(banana);
+        console.log(BANANA);
+
+        //var 700 = 700;  //-error. 변수,클래스,함수이름이 숫자로 시작해서는 안된다.
+        //var 7num = 7;
+        var num7 = 7;
+        var a1b2c3 = 3;
+
+        //var my-name = '홍길동';   //-error. 특수문자사용불가능 (-를 마이너스로 인식)
+        //허용되는 특수문자 : _ $
+        var my_name = '홍길동';
+        var $my_name = '홍길동';
+
+        var myPhoneNumber = '01012345678';      //camel case : java 변수
+        var my_phone_number = '01012345678';    //snake case                        <- 자바스크립트에서는 이렇게 많이 쓴다.
+        var MyPhoneNumber = '01012345678';      //pascal case : java의 클래스 
+        var strMyPhoneNumber = '01012345678';   //Hungarian case (맨앞에 타입붙여서)
+
+        var 과일 = '사과';  //한글변수 - 동작은 하지만 웬만하면 하지마라.
+        console.log(과일); 
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

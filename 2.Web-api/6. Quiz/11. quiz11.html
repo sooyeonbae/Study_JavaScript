@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        thead th,
+        tbody td {
+            border: 1px solid black;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h2>이벤트 위임방식으로 변경해 보세요.</h2>
+    <table>
+        <thead>
+            <th>번호</th>
+            <th>제목</th>
+            <th>내용</th>
+            <th>삭제</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>첫글</td>
+                <td>하이</td>
+                <td><button>삭제</button></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>첫글</td>
+                <td>하이</td>
+                <td><button>삭제</button></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>첫글</td>
+                <td>하이</td>
+                <td><button>삭제</button></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>첫글</td>
+                <td>하이</td>
+                <td><button>삭제</button></td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <script>
+        const $tbody = document.querySelector('tbody');
+
+        $tbody.addEventListener ('click', e => {
+            //함수에 매개변수 선언하지 않으면 이벤트 객체를 못쓰냐? 아니다.
+            //evnet라는 이름으로 바로 사용이 가능합니다.
+            console.log(e.target);
+            if (!e.target.matches('button')) {
+                return;
+            }
+
+            e.target.parentNode.parentNode.remove();
+            
+            //다른 방법
+            // const $btn = e.target;
+            // $list.removeChild($btn.parentNode.parentNode);
+
+            //parentNode말고 parentElement라고 써도된다.
+
+
+        })
+
+    </script>
+    
+</body>
+</html>

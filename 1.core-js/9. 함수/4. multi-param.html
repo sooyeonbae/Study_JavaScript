@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        //매개값 2개를 받는 함수
+        function add(n1, n2) {
+            return n1+n2;
+        }
+
+        //n개의 정수의 합을 구하는 함수 (매개값 개수가 정해지지 않음)
+        //- 'spread 문법' (ES6 배열문법) 가변인수
+        function add_all(name, ...numbers){    //...매개변수 : 전달되는 모든 값을 배열로 묶어서 전달한다.
+            console.log(name+'님 안녕하세요');
+            console.log(numbers);
+            var total = 0;
+            for (var num of numbers) {
+                total += num;
+            }
+            return total;
+        }
+        var result = add_all('둘리', 10,55,66,29,796,2677,346);  //numbers는 array
+        console.log(result);
+
+
+    </script>
+    
+</body>
+</html>

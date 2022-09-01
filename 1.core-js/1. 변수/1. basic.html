@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <!-- 기본적으로 자바스크립트는 html 위에서 동작합니다. -->
+    <!-- 스크립트가 시작된다는 뜻의 <script> 태그를 사용. -->
+    <!-- 자바스크립트는 동적 프로그래밍 언어입니다. -->
+
+    <script>
+        //자바의 sysout과 같은 기능 - console.log()
+        //JS는 " " 와 ' ' 둘 다 사용 가능. ' '를 더 많이 쓴다.
+        console.log('Hello JavaScript!');
+        console.log(2+3);
+        //F12눌러서 콘솔탭에서 확인
+
+        //변수의 선언 및 초기화
+        var total; //변수의 타입을 var로 통일한다. JS가 알아서 판단.
+        total = 100;
+
+        var a = 1;
+        var b = 2;
+        var c = 3;
+        console.log(a+b+c);
+
+        //변수의 값 변경 - 새로 넣으면 새 값이 들어간다.
+        total = 10000;
+        console.log(total);
+        
+        //변수의 값 복사
+        var copyResult = total;
+        total = 200;
+        console.log(copyResult);
+
+        total = total*2;
+        console.log(total);
+
+        
+    </script>
+    
+</body>
+</html>

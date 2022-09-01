@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        //begin부터 end까지의 총합을 구해주는 함수 (매개값 2개)
+        function calc_range_total(begin, end) {
+            var total = 0;
+
+            //JS에서 매개변수는 큰 의미가 없습니다.
+            //단순히 매개값으로 들어오는 것에 이름을 붙여 사용하는 형태입니다.
+            //함수에 전달되는 매개값들은 arguments 객체에서 전부 확인이 가능합니다.
+            console.log(arguments);         //arguments - 매개변수들을 배열형태로 보여준다. 꺼내서 사용할수도있다.
+            console.log('길이 : ' + arguments.length);
+
+            for (var n=begin; n<=end; n++) {
+                total += n;
+            }
+            return total;
+        }
+
+        var total_number = calc_range_total(10, 100);
+        console.log('실행 결과값 : '+total_number);
+
+        //자바스크립트의 함수는 매개변수의 개수를 다르게 주더라도 작동합니다.(좋은 코드는 아닙니다.)
+        var total_number = calc_range_total(10, 100, 30, 50, 70, 150); //자바에서는 error지만 JS에서는 오류는 안남.
+        console.log('실행 결과값 : '+total_number);
+
+
+
+        //- - - - - - - - - - - - - - - - - - - -
+        function select_random_food() {
+            var rn = Math.random();
+            return rn > 0.5 ? '짜장면' : '짬뽕';
+        }
+
+        console.log('랜덤음식 : ' + select_random_food());
+
+
+
+
+         //- - - - - - - - - - - - - - - - - - - -
+        function multiply (n1, n2) {
+            if (typeof n1 !== 'number' || typeof n2 !== 'number') {
+                console.log('숫자로 전달하세요');
+                return;
+            }
+            return n1*n2;
+        }
+
+        var res = multiply(3, '메롱');  //-자바에서는 error지만, 자바스크립트는 에러 안나고 결과만 NaN으로 뜬다. -> if로 typeof써서 체크해주기.
+        console.log(res);
+
+
+         //- - - - - - - - - - - - - - - - - - - -
+         //매개변수의 default값 지정
+         function say_hello(language='한국어') {        //이렇게 지정해두면 기본값이 한국어.
+            if (language === '한국어') {
+                console.log('안녕하세용')
+            } else if (language === '영어') {
+                console.log('HELLO~~')
+            } else if (language === '일본어') {
+                console.log('곤니찌와')
+            }
+         }
+
+         say_hello();   //값을 아무것도 주지 않았는데 error 안뜨고... 그냥 결과 안뜬다. -> 함수만들때 (매개변수 = '어쩌고') 해두면 기본값 세팅된다.
+
+    </script>
+    
+</body>
+</html>

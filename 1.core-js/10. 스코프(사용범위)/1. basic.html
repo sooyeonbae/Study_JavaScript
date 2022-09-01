@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        function foo(y) {           //y도 함수가 끝나면 소멸된다.매개값도 지역변수
+            var x = 'local';        //함수가 끝나면 소멸된다. (지역변수)
+            console.log('x : '+ x);
+            console.log('y : '+ y);
+        }
+
+        foo('parameter');
+
+        console.log('x : '+ x); //-error. x is not defined. x는 함수 안에서 태어나니까.
+        console.log('y : '+ y); //-error. 
+
+
+    </script>
+    
+</body>
+</html>

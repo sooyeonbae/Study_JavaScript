@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" id="name" value="kim" class="user-name">
+
+    <p id="text">HELLO</p>
+
+    <script>
+
+        const $input = document.querySelector('input[type="text"]');
+
+        //input의 value 속성 값 얻기
+        //const inputValue = $input.attributes.value.value;
+        //또다른방법    -   getAttribute()
+        const inputValue = $input.getAttribute('value');
+        console.log(inputValue);
+
+        //value 속성의 값을 변경하기
+        //$input.attributes.value.value = 'park';
+        //또다른방법    -   setAttribute( , )
+        $input.setAttribute('value', 'park');
+
+
+        //속성 추가하기 - setAttribute( , )
+        //p태그에 title 속성추가
+        const $paragraph = document.getElementById('text');
+        $paragraph.setAttribute('title','하이하이');
+
+
+        //속성 삭제하기 - removeAttribute()
+        $paragraph.removeAttribute('class');    //없는 속성 삭제한다고하면 에러는 안나지만 먼저 속성 여부를 확인하고 하는게 좋다.
+
+        //속성 있는지 확인하기 - hasAttribute()
+        console.log($paragraph.hasAttribute('class'));
+
+        
+        //속성 있는지 확인하고 삭제하기
+        if (!$input.hasAttribute('class')) {
+                //없으면 클래스를 부여해라(setAttribute)
+        } else {
+            // 있으면 클래스 제거해라.
+            $input.removeAttribute('class');
+        }
+
+    </script>
+    
+</body>
+</html>

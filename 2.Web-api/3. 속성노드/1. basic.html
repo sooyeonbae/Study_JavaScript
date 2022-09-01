@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" id="name" value="kim" class="user-name">
+
+    <script>
+
+        const $input = document.querySelector('input');
+
+        //속성 취득하기 - .attributes
+        console.log($input.attributes); // NamedNodeMap 이라는 유사배열형태
+        console.log($input.attributes[0].value);    //index방식으로 값 가져오기
+        console.log($input.attributes.id.value);     //속성 이름으로 값 가져오기
+        console.log($input.attributes.value.value);
+
+        //값 바꿔주기
+        $input.attributes.value.value = 'lee';
+        $input.attributes.type.value = 'password';
+        
+
+    </script>
+    
+</body>
+</html>

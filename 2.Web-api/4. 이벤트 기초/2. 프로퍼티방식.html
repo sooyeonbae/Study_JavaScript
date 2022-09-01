@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button id="btn">클릭하세요</button>
+    <button id="btn2">마우스를 올리세요</button>
+    <button id="btn3">마우스를 치우세요</button>
+
+    <script>
+
+        //이벤트 핸들러 정의
+        function hello() {
+            alert('HELLO');
+        }
+
+        //요소 얻어오기
+        const $btn = document.getElementById('btn');
+        const $btn2 = document.getElementById('btn2');
+        const $btn3 = document.getElementById('btn3');
+
+        
+        //이벤트 걸어주기  
+        //$btn.onclick = hello;
+        
+        //즉석에서 이벤트핸들러 정의해서 걸어주기
+        $btn.onclick = function() {
+            alert('하이하이');
+        }
+        $btn.onclick = function() { //프로퍼티방식은 하나의 요소에 하나의 이벤트핸들러만 걸 수 있는 단점이 있다. (나중거 적용)
+            alert('뻥이야');
+        }
+
+        $btn2.onmouseenter = function() {
+            alert('ㅋㅋ');
+        }
+
+        //function 생략한 버전
+        $btn3.onmouseleave = () => alert('ㅎㅎ');
+
+
+        //핸들러 제거
+        btn3.onmouseleave = null;
+
+
+    </script>
+
+</body>
+</html>

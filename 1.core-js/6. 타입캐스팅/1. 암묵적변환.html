@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var ex = 10 + '20';
+        console.log('ex : ' + ex);      //1020
+
+        ex = 10 * '3';
+        console.log('ex : ' + ex);      //30 (문자열은 곱셈연산이 없어서 숫자로 형변환)
+
+        var ex2 = 100 + '';
+        console.log(ex2);               //100 (문자열)
+
+        //문자열 타입의 암묵적 숫자변환
+        ex2 = +'550';
+        console.log(ex2);               //550. 앞에 +붙여서 정수 됐다. (자바의 (int) )
+
+        //논리타입의 암묵적 숫자변환
+        ex2 = +false;
+        console.log(ex2);               //0
+
+        ex2 = +null;
+        console.log(ex2);               //0
+
+
+    </script>
+
+</body>
+</html>

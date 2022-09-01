@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        //문자열이 아닌 값을 문자열로 변환하는 법.
+        var a = 10, b = 20;
+        var result = a+b;
+        console.log(result);    //30
+
+        //방법 1 - String()
+        var result = a + String(b);
+        console.log(result);    //1020
+
+        //방법 2 - .toString()
+        result = a.toString() + b.toString();
+        console.log(result);    //1020
+
+
+        //숫자가 아닌 값을 숫자타입으로 변환하는 법.
+        //방법 1 - Number()
+        var m = '10', n = '3.14';
+        result = Number(m) + Number(n);
+        console.log(result);    //13.14
+
+        //방법 2 - parseInt(), parseFloat()
+        result - parseInt(m) + parseFloat(n);
+        console.log(result);    //13.14
+
+
+        //논리타입이 아닌 값을 논리타입으로 변환하는 법.
+        var t = 'Hello', f = '';
+        //방법 1 - Boolean()
+        console.log(Boolean(t));    //true  (값이 존재하면 true)
+        console.log(Boolean(f));    //false (값이 없거나 정수 0 이면 false)
+
+        //방법 2 - !!
+        console.log(!!'hello');     //true
+
+
+    </script>
+    
+</body>
+</html>

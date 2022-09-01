@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <ul id="fruits">
+        <li class = "fruit apple">Apple</li>
+        <li class = "fruit banana">Banana</li>
+        <li class = "fruit grape">Grape</li>
+    </ul>
+
+    <script>
+
+        //CSS의 선택자로 바로 지목 가능
+        const $element = document.querySelector('.banana');     //괄호안에 CSS선택자(#id, .class)
+        console.log($element);
+
+        const $elem = document.querySelector('#fruits > li:nth-child(2)');
+        console.log($elem);
+
+        const $element2 = document.querySelector('li[class="fruit banana"]');
+        console.log($element2);
+
+        const $elel = document.querySelector('li.apple+li');    //인접형제성택자 (apple다음요소)
+        console.log($elel);
+
+
+        const $eleele = document.querySelectorAll('#fruits>li');
+        console.log($eleele);                           //리턴타입 : NodeList (유사배열객체)
+
+        //유사배열객체라 반복문 가능
+        for (let $e of $eleele) {
+            $e.style.background = 'tomato';
+        }
+
+        //없는 선택자를 지목시 null이 아니라 빈 노드리스트 객체가 리턴된다.
+        const $test = document.querySelectorAll('.peach');
+        console.log($test);
+
+    </script> 
+    
+</body>
+</html>

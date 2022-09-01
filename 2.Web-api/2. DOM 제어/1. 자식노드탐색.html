@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <ul id="fruits">
+        <li class="apple">Apple</li>
+        <li class="banana">Banana</li>
+        <li class="grape">Grape</li>
+    </ul>
+
+    <div id="test">
+
+    </div>
+
+
+    <script>
+
+        //노드탐색의 기점이 되는 ul요소 취득하기
+        const $fruits = document.getElementById('fruits');
+
+        //기준 노드의 모든 자식노드를 탐색 (텍스트 노드 포함) - childNodes
+        const $childNodes = $fruits.childNodes;
+        console.log($childNodes);
+
+        //기준 노드의 모든 자식 노드를 탐색 (텍스트 노드 제외) - children
+        const $children = $fruits.children;
+        console.log($children);
+
+        //기준 노드의 첫번째 자식 노드를 탐색 (텍스트 노드 포함) - firstChild
+        //firstChild는 텍스트노드가 나올 가능성이 있다.
+                            //첫번째 요소 자식 (텍스트노드 제외) - firstElementChild
+        const $firstChild = $fruits.firstChild;
+        console.log('first-child : ' + $firstChild);
+        console.log('first-element-child : ' + $fruits.firstElementChild);
+                            //마지막 요소 자식               - lastElementChild
+        console.log('last-element-child : ' + $fruits.lastElementChild);
+
+        
+
+        //기준 노드에 자식노드가 있는지 여부를 확인 - hasChildNodes()
+        //(텍스트노드가 있을시 true가 나올 수 있음)
+        const $test = document.getElementById('test');
+        console.log($test.hasChildNodes()); //True. 공백이 텍스트노드 됐다.
+
+        //텍스트 노드를 제외한 요소노드의 여부 확인
+        // : 자식요소노드(children)를 취한 뒤 length값을 논리로 바꾸어서 확인한다.
+        console.log(!!$test.children.length);       //앞에 느낌표 두개 붙여서 논리값으로 바꾸기 (0이면 false, 그 외는 true)
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./2-2. popup.js"></script>
+</head>
+<body>
+
+    <h2>메인 화면</h2>
+    
+    <div>
+        메인페이지라고 칩시다.
+    </div>
+
+
+    <script>
+        window.onload = function() {    //윈도우 창이 열리자마자 실행할 내용
+            //쿠키를 확인하여 쿠키가 없는 경우에는 팝업창을 실행
+            //쿠키 찾기
+            if (!getCookie('popup')) {
+                window.open('2-1. popup.html', '메인팝업창', 'width=300, height=300, top=200');
+            }
+        }
+
+    </script>
+</body>
+</html>

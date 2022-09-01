@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- BOM : Browser Object Model                 cf. DOM : Document Object Model-->
+    
+    <button id="popup"> 새창 열기 </button>
+
+    <script>
+        const $popup = document.getElementById('popup');
+        $popup.onclick = function() {
+            window.open('https://www.naver.com', '네이버창', 'width=300, height=300, left=100, top=100');  
+            // 새 창 열기 - open('새 창 주소', '브라우저에 띄울 이름', '옵션(창 크기, 위치 등등)') - 광고/공지사항 등
+        }
+    </script>
+    
+</body>
+</html>

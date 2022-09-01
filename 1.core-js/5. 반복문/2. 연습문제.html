@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+
+        //1~20 사이의 랜덤 정수를 생성해서 + - * 연산이 랜덤으로 등장하는 프로그램을 만드세요.
+        //사용자가 '그만' 이라고 입력했을 시
+        //정답, 오답 횟수를 alert으로 출력하면서 프로그램을 종료시켜 주시면 됩니다.
+
+
+        var cCount = 0, iCount = 0; //정답횟수, 오답횟수
+
+        while(true) {
+            var rn1 = Math.floor((Math.random()*20)+1); //1<=   <20
+            var rn2 = Math.floor((Math.random()*20)+1);
+
+            //부호를 결정하기 위해 0(+) 1(-) 2(*)의 랜덤 상수 생성
+            var rn3 = Math.floor(Math.random()*3);     // 0<=   <3
+
+            var real_answer;
+            var operater_mark;
+            if (rn3 == 0) {
+                operater_mark = '+';
+                real_answer = rn1 + rn2;
+            } else if (rn3 == 1) {
+                operater_mark = '-';
+                real_answer = rn1 - rn2;
+            } else {
+                operater_mark = 'X';
+                real_answer = rn1 * rn2;
+            }
+
+            var answer = prompt(`${rn1} ${operater_mark} ${rn2} = ??? `);
+
+            if (answer === '그만') {
+                break;
+            }
+
+            if (answer == real_answer) {
+                alert('정답입니다!');
+                cCount++;
+            } else {
+                alert('오답입니다.');
+                iCount++;
+            }
+        }       //반복문 끝
+        alert (`프로그램이 종료되었습니다.
+        # 정답횟수 : ${cCount}회, 오답횟수 : ${iCount}회`);
+
+
+
+    </script>
+    
+</body>
+</html>

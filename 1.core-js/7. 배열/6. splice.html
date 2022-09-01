@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        // splice() : 배열의 특정 요소를 제거
+        var foods = ['엽기떡볶이', '김말이', '주먹밥', '닭꼬치'];
+        console.log(foods);
+
+        var del_food = foods.splice(1,2);   //시작인덱스, 개수(몇개지울지)
+        console.log('del_food : ' + del_food);
+        console.log('foods : ' + foods);
+
+        foods.splice(0, 1, '치킨', '파스타');   //0번째 인덱스부터 1개 삭제, 그리고 그 자리에 데이터 추가
+        console.log(foods);
+
+        //삭제요소개수를 0개 주면 삭제 없이 데이터를 추가할 수도 있습니다.
+        foods.splice(2, 0, '피자'); //2번인덱스부터 0개를 지우고(=지우지말아라) 그리고 그 자리(2번인덱스)에 피자 추가
+        console.log(foods);
+
+        //개수를 지정하지 않으면 시작 인덱스부터 끝까지 삭제됩니다.
+        foods.splice(2); 
+        console.log(foods); 
+
+
+        foods.push('닭발', '샐러드');
+
+
+        var input = '닭발';
+        var idx = foods.indexOf(input);
+
+        if (idx>=0) {
+            foods.splice(idx, 1);
+            console.log('삭제 완료');
+        } else { //idx = -1 (값 없음)
+            console.log('데이터가 없습니다.');
+        }
+
+
+    </script>
+    
+</body>
+</html>

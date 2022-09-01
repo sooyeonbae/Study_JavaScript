@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        //const는 한번 넣어둔 값으로 끝까지 간다. 값의 변경이 불가능하다.'상수' (let은 변경 가능)
+
+        const x = '메롱';
+        console.log(x);
+        
+        //x = '메로나';  -error. 대입이 안된다.
+        //console.log(x);
+
+
+        //const와 객체  (객체, 배열, 함수)
+        //객체 내부 변경 가능하다. (주소값이 안변하고있으니까)
+        const person = {
+            name : 'park',
+            age : '20'
+        };
+
+        person.name = 'kim';
+
+        //안되는 코드 (객체 자체를 변경하는 행위)
+        person = {              //주소값이 바뀌는거라 이렇게 할수없다.
+            name : 'lee',
+            age : 30
+        };
+
+
+        //결론
+        //변경 가능성이 있는건 let, 안바뀔거같은건 const
+
+
+    </script>
+</body>
+</html>

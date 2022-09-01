@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        //전역변수 (전체영역에서 사용 가능한 변수) - 코드의 가장 바깥에서 선언된 변수.
+
+        var x = 'global x';
+
+        function outer(x) {
+            var y = 'outer local y';
+            console.log('x : '+ x);
+            console.log('y : '+ y);
+
+            function inner() {
+                var x = 'inner local x';
+                var z = 'inner local z';
+                console.log(x);
+                console.log(y);
+                console.log(z);
+            }
+            inner();
+        }
+
+        outer('outer local x');
+        console.log(x);
+        
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        //callback 함수 : 특정 이벤트에 의해 다른 함수의 매개값으로 전달되는 함수.
+        //비동기방식(미리예약을 걸어두고 나중에 특정시점에 실행) ex.아이디중복확인
+        //자바는 비동기방식 못함. 화면에서 비동기방식발생시키는건 자바스크립트 콜백으로 한다.
+
+        function showNumbers(n, func) { //매개값으로 함수 func 를 전달
+            for (var i=1; i<=n; i++) {
+                func(i);
+            }
+        }
+
+
+        //매개값을 주면서 함수 설명
+        showNumbers(10, i => {
+            if (i%2 === 0) {
+                console.log(i);     //func() : i가 짝수면 출력하는 함수
+            }
+        })
+
+
+        //함수를 먼저 선언해두고 나중에 showNumbers 할때 호출
+        function temp(i) {
+            if (i%2===0) {
+                console.log(i);
+            }
+        }
+
+        showNumbers(20,temp);
+
+        //- - - - - - - - - - - - - - - - - - - - -
+        var plusMinus = function(a, b, callback) {
+            callback(a+b, a-b);
+        }
+
+        plusMinus(10, 20, function(res1, res2) {
+            console.log(res1);
+            console.log(res2);
+        });
+
+
+    </script>
+</body>
+</html>

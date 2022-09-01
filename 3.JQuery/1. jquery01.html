@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 제이쿼리 끌고오기 -->
+    <script src="lib/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+
+    <input type="text" id="apple" value="사과">
+    <input type="text" class="melon" value="멜론">
+    <input type="hidden" value="망고">
+
+    <script>
+        const $a1 = document.getElementById('apple');
+        //제이쿼리버전 : $(css선택자)
+        const $a2 = $('#apple');   
+        console.log($a1);
+        console.log($a2); 
+
+        console.log('- - - - - - - - - - - - - - - - - - - - - - - ');
+
+        const b1 = document.querySelector('.melon').value;
+        //제이쿼리버전 : .val()로 값 가져오기.
+        const b2 = $('.melon').val();
+        console.log(b1);
+        console.log(b2); 
+
+        console.log('- - - - - - - - - - - - - - - - - - - - - - - ');
+
+        const c1 = document.querySelector('input[type=hidden]').value;
+        //제이쿼리버전
+        const c2 = $('input[type=hidden]').val();
+        console.log(c1);
+        console.log(c2); 
+
+
+
+    </script>
+    
+</body>
+</html>
